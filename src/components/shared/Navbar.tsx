@@ -4,7 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X } from "lucide-react"; // Make sure to install lucide-react
+import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle"; // Import your new toggle
 
 const links = ["Solutions", "Infrastructure", "Agency", "Careers"];
 
@@ -32,7 +33,7 @@ export default function Navbar() {
               src="/logo.png"
               alt="Nexico Brand"
               fill
-              className="object-cover" // Changed to contain to ensure logo isn't cut off
+              className="object-contain" // Contain ensures logo isn't cropped
               priority
             />
           </motion.div>
@@ -62,16 +63,22 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right Side: Button + Mobile Toggle */}
-        <div className="flex items-center gap-2 md:ml-auto">
-          {/* CTA Section - Hidden on extra small devices if needed, or scaled down */}
-          <div className="md:pl-4 md:border-l border-zinc-200 dark:border-white/10">
+        {/* Right Side: Theme Toggle + Button + Mobile Toggle */}
+        <div className="flex items-center gap-3 md:ml-auto">
+          
+          {/* THEME TOGGLE UNIT */}
+          <div className="flex items-center">
+             <ThemeToggle />
+          </div>
+
+          {/* CTA Section */}
+          <div className="pl-3 border-l border-zinc-200 dark:border-white/10">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group relative flex items-center gap-2 px-3 md:px-5 py-2 md:py-2.5 overflow-hidden rounded-xl bg-black dark:bg-white transition-all shadow-[0_0_20px_rgba(57,255,20,0)] hover:shadow-[0_0_25px_rgba(57,255,20,0.4)] border border-[#39FF14]/30"
             >
-              <div className="absolute inset-0 w-0 bg-linear-to-r from-[#39FF14] via-[#2bff00] to-[#39FF14] transition-all duration-500 ease-out group-hover:w-full" />
+              <div className="absolute inset-0 w-0 bg-gradient-to-r from-[#39FF14] via-[#2bff00] to-[#39FF14] transition-all duration-500 ease-out group-hover:w-full" />
               <span className="relative z-10 flex h-1.5 w-1.5 md:h-2 md:w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#39FF14] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 md:h-2 md:w-2 bg-[#39FF14] dark:bg-black group-hover:bg-black"></span>
@@ -116,14 +123,6 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </motion.div>
-
-      <style jsx>{`
-        @keyframes shimmer {
-          100% {
-            transform: translateX(100%);
-          }
-        }
-      `}</style>
     </nav>
   );
 }
