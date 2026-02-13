@@ -5,7 +5,7 @@ import ComingSoonModal from "@/components/motion/ComingSoonModal";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import Hero from "./components/home/Hero";
-
+import Features from "./components/home/Features";
 
 export default function HomePage() {
   const [isMaintenanceMode] = useState(false);
@@ -21,7 +21,8 @@ export default function HomePage() {
       {/* Hero Content */}
       <Hero />
 
-      {/* You can add a 'Services' or 'BentoGrid' section here later */}
+      {/* Features Section*/}
+      <Features />
 
       {/* Footer */}
       <Footer />
