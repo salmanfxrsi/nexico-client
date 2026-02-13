@@ -11,6 +11,7 @@ import CurrentBuild from "./components/home/CurrentBuild";
 import FoundersSection from "./components/home/FoundersSection";
 import InfrastructureSection from "./components/home/InfrastructureSection";
 import ServicesMatrix from "./components/home/ServicesMatrix";
+import ContactTerminal from "./components/home/ContactTerminal";
 
 export default function HomePage() {
   const [isMaintenanceMode] = useState(false);
@@ -39,6 +40,8 @@ export default function HomePage() {
       <InfrastructureSection />
 
       <ServicesMatrix />
+
+      <ContactTerminal />
 
       {/* Footer */}
       <Footer />
