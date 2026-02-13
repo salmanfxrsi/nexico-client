@@ -7,6 +7,7 @@ import Footer from "@/components/shared/Footer";
 import Hero from "./components/home/Hero";
 import Features from "./components/home/Features";
 import EngineRoom from "./components/home/EngineRoom";
+import CurrentBuild from "./components/home/CurrentBuild";
 
 export default function HomePage() {
   const [isMaintenanceMode] = useState(false);
@@ -27,6 +28,8 @@ export default function HomePage() {
 
       {/* Engine Room Section */}
       <EngineRoom />
+
+      <CurrentBuild />
 
       {/* Footer */}
       <Footer />
