@@ -32,6 +32,7 @@ import KnowledgeBase from "./components/home/KnowledgeBase";
 import ContactTerminal from "./components/home/ContactTerminal";
 import FinalDirective from "./components/home/FinalDirective";
 import CommandTrigger from "@/components/shared/CommandTrigger";
+import AmbientGlow from "@/components/shared/StatusBeacon";
 
 export default function HomePage() {
   const [isMaintenanceMode] = useState(false);
@@ -39,7 +40,7 @@ export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-white dark:bg-black transition-colors duration-500 flex flex-col">
       {isMaintenanceMode && <ComingSoonModal />}
-      
+      <AmbientGlow />
       <Navbar />
 
       <main className="flex-grow">
