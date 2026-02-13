@@ -9,6 +9,7 @@ import Features from "./components/home/Features";
 import EngineRoom from "./components/home/EngineRoom";
 import CurrentBuild from "./components/home/CurrentBuild";
 import FoundersSection from "./components/home/FoundersSection";
+import InfrastructureSection from "./components/home/InfrastructureSection";
 
 export default function HomePage() {
   const [isMaintenanceMode] = useState(false);
@@ -33,6 +34,8 @@ export default function HomePage() {
       <CurrentBuild />
 
       <FoundersSection />
+
+      <InfrastructureSection />
 
       {/* Footer */}
       <Footer />
