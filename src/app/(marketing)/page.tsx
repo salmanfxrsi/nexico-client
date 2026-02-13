@@ -6,6 +6,7 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import Hero from "./components/home/Hero";
 import Features from "./components/home/Features";
+import EngineRoom from "./components/home/EngineRoom";
 
 export default function HomePage() {
   const [isMaintenanceMode] = useState(false);
@@ -23,6 +24,9 @@ export default function HomePage() {
 
       {/* Features Section*/}
       <Features />
+
+      {/* Engine Room Section */}
+      <EngineRoom />
 
       {/* Footer */}
       <Footer />
